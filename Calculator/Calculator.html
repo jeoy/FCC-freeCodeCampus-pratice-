@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Js Calculator</title>
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+<style type = "text/css">
+body{
+	background-color: rgba(202,53,74,0.5);
+}
+.center{
+	position: absolute;
+	top:50%;
+	left: 50%;
+	width: 400px;
+	height: 500px;
+	margin-left: -200px;
+	margin-top: -250px;
+	background-color: rgba(242,53,74,0.5);
+	padding: 10px;
+}
+.output{
+	height: 32%;
+}
+.input{
+	height: 68%;
+}
+.btn{
+	font-size: 25px;
+}
+.btLit{
+	width: 92px;
+	margin:0%;
+	height: 60px;
+	border-radius: 0px;
+	margin-bottom: 5px;
+	background-color: rgba(202,53,74,0.5);
+	color: white;
+}
+.btBig{
+	width: 188px;
+	margin:0%;
+	height: 60px;
+	border-radius: 0px;
+	margin-bottom: 5px;
+	background-color: rgba(202,53,74,0.5);
+	color: white;
+}
+.sign{
+	background-color: rgba(172,43,24,0.5);
+}
+.expression{
+	margin-top: 5px;
+	height: 24%;
+	/*background-color: red;*/
+	/*padding: 8px;*/
+	font-size: 22px;
+
+}
+.expression input{
+	width: 100%;
+	color: white;
+	background-color: rgba(132,43,24,0.5);
+}
+.result{
+	position: relative;
+	height: 50%;
+	background-color: white;
+	padding-right: 5px;
+	/*margin-bottom: 10px;*/
+	background-color: rgba(132,43,24,0.5);
+
+}
+.result p{
+	position: absolute;
+	right: 0;
+	font-size: 48px;
+	bottom: 0;
+	color: white;
+ 
+}
+
+</style>
+</head>
+<body>
+
+<section>
+	<div class = "center">
+		<div class = "output">
+			<div class=" expression">
+				<input type="text" name=""  disabled="disabled" value="" />
+			</div>
+			<div class = "result">
+		 		<p>0</p>
+			</div>
+		</div>
+		<div class = "input">
+			<button class = "btn btLit " id ="clear">C</button>
+			<button class = "btn btLit  " id ="pAndN">＋/－</button>
+			<button class = "btn btLit " id = "precent">%</button>
+			<button class = "btn btLit num sign" value="/">÷</button>
+			<button class = "btn btLit num" value = 7>7</button>
+			<button class = "btn btLit num" value = 8>8</button>
+			<button class = "btn btLit num" value = 9>9</button>
+			<button class = "btn btLit num sign " value="*">×</button>
+			<button class = "btn btLit num" value = 4>4</button>
+			<button class = "btn btLit num" value = 5>5</button>
+			<button class = "btn btLit num" value = 6>6</button>
+			<button class = "btn btLit num sign" value="-">－</button>
+			<button class = "btn btLit num" value = 1>1</button>
+			<button class = "btn btLit num" value = 2>2</button>
+			<button class = "btn btLit num" value = 3>3</button>
+			<button class = "btn btLit num sign" value="+">＋</button>
+			<button class = "btn btBig num" value = 0>0</button>
+			<button class = "btn btLit num" value = ".">.</button>
+			<button class = "btn btLit  sign" id ="equal">=</button>
+		</div>
+
+	</div>
+</section>
+
+</body>
+
+
+<script  src = "../scripts/jquery-3.1.1.js" type="text/javascript"></script>
+<script src = "../scripts/bootstrap.js" type="text/javascript" ></script>
+<script> 
+
+
+ 
+$(function(){
+	var calcuDone = false;
+	$(".input").on("click",".num",function(){
+		var inputValue = $(this).val();
+		var curExp = $(".expression input").val();
+		 if(calcuDone && (!isNaN(+inputValue))) {
+			curExp = "";
+		}
+		calcuDone = false;
+		curExp += inputValue;
+		$(".expression input").val(curExp);
+
+	}).on("click","#equal",function(){
+		calcuDone = true;
+		try{
+			var result = eval($(".expression input").val());
+		}
+		catch(e){
+			$(".result p").text(NaN);
+		}
+		$(".expression input").val(result);
+		if(result){
+			if(result.toString().length >10){
+				var fontSize = 50 - (result.toString().length - 10)*2;
+				$(".result p").css("font-size",fontSize+"px");
+			}
+			else
+				$(".result p").css("font-size","50px");
+			$(".result p").text(result);
+		}
+		
+	});
+
+	$("#clear").click(function(){
+		$(".expression input").val("");
+		$(".result p").text("0");
+	});
+
+	// var toggleSwitch = false;
+	$("#pAndN").click(function(){
+		if ( Number($(".result p").text())>0 )
+			$(".result p").text("-"+$(".result p").text());
+		else if ( Number($(".result p").text())< 0 )
+			$(".result p").text($(".result p").text().slice(1));
+		 
+	});
+	$("#precent").click(function(){
+		$(".result p").text($(".result p").text()/100);
+		
+	});
+});
+</script>
+</html>

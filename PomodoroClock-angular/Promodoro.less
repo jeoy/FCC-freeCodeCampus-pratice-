@@ -1,0 +1,139 @@
+@bgcolor: rgba(121,224,134,0.5);
+@tomato:rgba(11,224,134,0.5);
+@pauseColor : rgba(101,164,134,0.5);
+@water :  rgba(101,204,134,0.5);
+
+// @bgcolor: rgba(60,60,60,0.7);
+// // @bgcolor: rgba(52,203,54,0.7);
+// @tomato: darken(@bgcolor,2%);
+// @pauseColor : darken(@bgcolor,15%);
+// @waterR :   #e35d6c;
+// @water :  #7de35d;
+ 
+
+// @bgcolor: #dd7b78;
+// // @bgcolor: rgba(52,203,54,0.7);
+// @tomato: rgba(226,127,108,1);
+// @pauseColor : darken(@tomato,10%);
+// @waterR :   #dc5245;
+// @water :  #2fcc71;
+ 
+
+body{
+    background-color: @bgcolor;
+}
+.center{
+    position: absolute;
+    top:220px;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin-left: -200px;
+    z-index: 1;
+    background-color: @tomato;
+    padding: 10px;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: background-color 1s;
+    :hover{
+         cursor: pointer;
+    }
+}
+ 
+
+
+.pause{
+    background-color: @pauseColor;
+}
+
+.top{
+    height: 55%;
+    width: 110%;
+    margin-left: -5%;
+    margin-top: -5%;
+    text-align: center;
+ 
+    /*background-color: rgba(172,43,24,0.5);*/
+}
+
+.bottom{
+    height: 55%;
+    width: 110%;
+    margin-left: -5%;
+    margin-bottom: -5%;
+    height: 55%;
+    /*background-color: rgba(202,53,74,0.5);*/
+}
+.Timer{
+    padding-top: 60px;
+    font-size: 60px;
+    text-align: center;
+    color: white;
+}
+#item{
+    padding-top: 100px;
+    font-size: 50px;
+    text-align: center;
+    color: white;
+}
+.session{
+    position: relative;
+    margin: 0px;
+    float: left;
+    width: 50%;
+    height: 100%;
+    /*background-color: red;*/
+    padding:60px 0 0 200px;
+}
+.break{
+    float: left;
+    width: 50%;
+    height: 100%;
+    /*background-color: yellow;*/
+    padding:60px 200px 0 0;
+}
+ 
+header{
+    text-align: center;
+    span{
+        display: inline-block;
+        /*width: 100px;*/
+        margin-left: 15px;
+        margin-right: 15px;
+        font-size: 35px;
+        line-height: 35px;
+        color:white;
+        vertical-align: middle;
+        }
+
+    .title{
+        color: white;
+        font-size: 25px;
+        margin-bottom: 5px;
+    }
+
+    
+    /*padding-top: 80px;*/
+}
+.btn{
+    width: 60px;
+    color: white;
+    font-size: 26px;
+    text-align: center;
+    padding-bottom: 11px;
+    background-color:  @tomato;
+}
+
+#water{
+    position: absolute;
+    background-color: @water;
+    height: 0%;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    transition: height 1s;
+    transition-timing-function : linear;
+}
+
+ 
