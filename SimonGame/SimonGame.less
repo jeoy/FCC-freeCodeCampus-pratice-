@@ -1,0 +1,140 @@
+@bgcolor: #777;
+@tomato:rgba(85,85,85,1);
+ 
+ 
+body{
+    background-color: @bgcolor;
+}
+.center{
+    position: absolute;
+    top:140px;
+    left: 50%;
+    width: 500px;
+    height: 500px;
+    margin-left: -250px;
+    z-index: 1;
+    background-color: @tomato; 
+    padding:15px;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: background-color 1s;
+  
+}
+
+.drum{
+    width: 235px;
+    height: 235px;
+    float: left;
+    border: 10px @tomato solid;
+    // transition: background-image 0.5s;
+    &:hover{
+        cursor: pointer;
+    }
+}
+.t-l{
+    border-top-left-radius: 100%;
+    
+    background-image: url("yellow.jpg");
+    // background-position: center;
+    background-size: 180%;
+    background-position: top;
+    // 
+      
+}
+.t-r{
+    border-top-right-radius: 100%;
+    background-image: url("red.jpg");
+    background-size: 150%;
+    background-position: top;
+ 
+}
+.b-l{
+    border-bottom-left-radius: 100%;
+    background-image: url("blue.jpg");
+    background-size: 180%;
+    background-position: center;
+ 
+ 
+ }
+.b-r{
+    border-bottom-right-radius: 100%;
+       
+    background-image: url("green.jpg");
+    background-size: 120%;
+    background-position: top;
+   
+ 
+}
+
+.coreCenter{
+    position: absolute;
+    top:150px;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    margin-left: -100px;
+    z-index: 1;
+    background-color: @bgcolor; 
+    padding:15px;
+    border-radius: 50%;
+    overflow: hidden; 
+     border: 20px @tomato solid;
+    text-align: center;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #5cb85c;
+    background-image:none;
+    &:hover{
+        background-image:none;
+        background-color: #14b514;
+        border: #14b514;
+    }
+}
+
+#top{
+    text-align: center;
+    margin:0 auto;
+    width: 500px;
+    color:white;
+}
+
+#led{
+    border: 2px solid @tomato;
+    vertical-align: middle;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    background-color: white;
+
+}
+
+#count {
+    font-size: 20px;
+
+    input{
+        background-color: @tomato;
+        width: 50px;
+        font-size: 20px;
+        text-align: center;
+        vertical-align: middle;
+        margin-right: 10px;
+    }
+    margin:15px;
+}
+
+input[type=checkbox]{visibility:hidden;}  .checkboxThree{width: 120px; height:40px;background:#333;margin:20px 25px;border-radius:50px;position:relative;margin-left: 15px;}.checkboxThree:before{content:'On';position:absolute;top:12px;left:13px;height:2px;color:#1fbba6;font-size:16px;}.checkboxThree:after{content:'Off';position:absolute;top:12px;left:84px;height:2px;color:#ddd;font-size:16px;}.checkboxThree label{display:block;width:52px;height:22px;border-radius:50px;-webkit-transition:all .5s ease;-moz-transition:all .5s ease;-o-transition:all .5s ease;-ms-transition:all .5s ease;transition:all .5s ease;cursor:pointer;position:absolute;top:9px;z-index:1;left:12px;background:#ddd;}.checkboxThree input[type=checkbox]:checked+label{left:60px;background:#1fbba6;} 
+
+#start,#strict{
+    font-size: 20px;
+}
+
+
+.checkboxThree{
+    text-align: center;
+    margin:0 auto;
+    // width: 500px;
+}

@@ -2,7 +2,7 @@
 @tomato:rgba(11,224,134,0.5);
 @pauseColor : rgba(101,164,134,0.5);
 @water :  rgba(101,204,134,0.5);
-
+@pauseColorR :rgba(162, 53, 54, 0.5);
 // @bgcolor: rgba(60,60,60,0.7);
 // // @bgcolor: rgba(52,203,54,0.7);
 // @tomato: darken(@bgcolor,2%);
@@ -18,10 +18,14 @@
 // @waterR :   #dc5245;
 // @water :  #2fcc71;
  
-
+html{
+    height: 100%;
+}
 body{
     background-color: @bgcolor;
+    height: 100%;
 }
+
 .center{
     position: absolute;
     top:220px;
@@ -43,7 +47,10 @@ body{
 
 
 .pause{
-    background-color: @pauseColor;
+    background-color: @pauseColor !important ;
+}
+.pauseR{
+    background-color: @pauseColorR !important ;
 }
 
 .top{
@@ -76,21 +83,29 @@ body{
     text-align: center;
     color: white;
 }
+.header{
+    width: 500px;
+    text-align: center;
+    margin:40px auto 0 auto;
+    height: 100px;
+}
 .session{
-    position: relative;
-    margin: 0px;
-    float: left;
-    width: 50%;
+    // position: relative;
+    display: inline-block;
+    margin-right: 10px;
+    // float: left;
+    // width: 50%;
     height: 100%;
     /*background-color: red;*/
-    padding:60px 0 0 200px;
+    // padding:60px 0 0 200px;
 }
 .break{
-    float: left;
-    width: 50%;
+    display: inline-block;
+    // float: left;
+    // width: 50%;
     height: 100%;
     /*background-color: yellow;*/
-    padding:60px 200px 0 0;
+    // padding:60px 200px 0 0;
 }
  
 header{
